@@ -29,19 +29,39 @@ export default function Modal({isOpen, setModalOpen, children}) {
         return (
             <div style={BACKGROUND_STYLE}>
             <div style={MODAL_STYLE}>
-                <div>
+                <div style={{marginBottom: 40}}>
                     {children}
                 </div>
                 <div>
                 <button style={{
                     position: "absolute",
                     bottom: "10px",
-                    left: "10px"
-                    }}onClick={setModalOpen}>Fazer pedido</button>
+                    left: "10px",
+                    background: "none",
+                    border: "none",
+                    fontSize: "18px",
+                    color: "#333",
+                    cursor: "pointer",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "4px",
+                    border: "1px solid #ccc",
+                    backgroundColor: "#fff",
+                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                    }}onClick={setModalOpen}>Adicionar ao Carrinho</button>
                 <button style={{
                     position: "absolute",
                     bottom: "10px",
-                    right: "10px"
+                    right: "10px",
+                    background: "black",
+                    border: "none",
+                    fontSize: "18px",
+                    color: "#333",
+                    cursor: "pointer",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "4px",
+                    border: "1px solid #ccc",
+                    backgroundColor: "#fff",
+                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
                     }} onClick={setModalOpen}>Fechar</button>
                 </div>
             </div>

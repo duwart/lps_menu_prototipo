@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { menu } from "../Data";
 import Modal from "./Modal";
+
 const Menu = () => {
   const [openModal, setOpenModal] = useState(false);
   const [listModal, setListModal] = useState([]);
+  const [listCheck, setListCheck] = useState([]);
+  const [total, setTotal] = useState(5);
   const toggleIngredient = (index) => {
-    //const updatedListModal = [...listModal];
-    //updatedListModal[index].selected = !updatedListModal[index].selected;
-    //setListModal(updatedListModal);
+    const updatedlistCheck = [...listModal];
+    updatedlistCheck[index].selected = !updatedlistCheck[index].selected;
+    setListCheck(updatedlistCheck);
+    
   };
   return (
     <>
@@ -41,11 +45,13 @@ const Menu = () => {
                     checked={ingrediente.selected || false}
                     onChange={() => toggleIngredient(index)}
                   />
-                  {ingrediente}</p>
+                  {ingrediente.nome} - ${ingrediente.price}</p>
                 </div>
                 ))}
               </div>
+              <div style={{fontSize: 18, marginLeft: 10}}> Total ${listModal.reduce((total, produto) =>  produto.selected ? total + produto.price : total,0)}</div>
               </Modal>
+          
       </section>
       
     </>

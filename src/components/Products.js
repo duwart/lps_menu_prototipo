@@ -18,16 +18,19 @@ const Products = () => {
               </div>
               <div className="image">
                 <img src={item.img} alt="" />
+
               </div>
               <div className="content">
-                <h3>fresh coffee</h3>
-                <div className="stars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star-half-alt"></i>
+                <h3>{item.name}</h3>
+                {item.ingredientes.map((ingrediente, index) => (
+                  <div key={index}>
+                  <p style={{fontSize: 17, marginTop: 20, color:'#fff'}}>
+                  {ingrediente}</p>
                 </div>
+                ))}
+                <button className="btn" onClick={() =>{}}>
+                Adicionar ao Carrinho
+              </button>
               </div>
             </div>
           ))}
